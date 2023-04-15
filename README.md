@@ -1,8 +1,4 @@
-# Control Bluetooth Speaker by Gesture Recognition (Midterm Report)
-
-# **Group5**
-
-61175024H 白偉辰, 61175072H 何鉦漢
+# Control Bluetooth Speaker by Gesture Recognition
 
 # Mission Statements
 
@@ -17,39 +13,23 @@ Gesture recognition is a technology that recognizes a specific gesture or moveme
 # Challenges & Goals
 
 - **Stage 1 : Recognize Hand Joints**
+    > In this stage, the goal is to use a camera connected to a Raspberry Pi to recognize the different hand joints accurately. This can be achieved using computer vision techniques such as image segmentation, feature extraction, and pattern recognition. Once the hand joints are identified, their positions can be used as input for the subsequent stages.
     - Using camera to recognize hand joints correctly with Raspberry Pi.
     
-    <aside>
-    📎 In this stage, the goal is to use a camera connected to a Raspberry Pi to recognize the different hand joints accurately. This can be achieved using computer vision techniques such as image segmentation, feature extraction, and pattern recognition. Once the hand joints are identified, their positions can be used as input for the subsequent stages.
-    
-    </aside>
-    
 - **Stage 2 : Recognize  Custom Gestures**
+    > The aim of this stage is to develop a method to convert the information about the position and orientation of the hand joints into custom gestures. This could involve mapping certain hand positions or movements to specific commands, such as making a fist to pause or play music. Real-time images from the camera on the Raspberry Pi can be processed to recognize the custom gestures accurately.
     - Design a method to convert hand joint information into custom gestures.
     - Capture real-time images through the camera on the Raspberry Pi and correctly recognize gestures.
     
-    <aside>
-    📎 The aim of this stage is to develop a method to convert the information about the position and orientation of the hand joints into custom gestures. This could involve mapping certain hand positions or movements to specific commands, such as making a fist to pause or play music. Real-time images from the camera on the Raspberry Pi can be processed to recognize the custom gestures accurately.
-    
-    </aside>
-    
 - **Stage 3 : Control Bluetooth Speaker with Custom Gestures**
+    > In this stage, the goal is to establish stable Bluetooth communication between the Raspberry Pi and a Bluetooth speaker. Once the communication is established, the custom gestures recognized in stage 2 can be used to control the Bluetooth speaker, such as adjusting the volume, changing tracks, or changing the music on or off.
     - Stable Bluetooth communication with device.
     - Connect the Bluetooth speaker with the Bluetooth communication device on the Raspberry Pi and use the gesture information to control the Bluetooth speaker.
     
-    <aside>
-    📎 In this stage, the goal is to establish stable Bluetooth communication between the Raspberry Pi and a Bluetooth speaker. Once the communication is established, the custom gestures recognized in stage 2 can be used to control the Bluetooth speaker, such as adjusting the volume, changing tracks, or changing the music on or off.
-    
-    </aside>
-    
 - **Stage 4 : Transmit/Receive Datas Between Raspberry Pi & PC**
+    > The objective of this stage is to enable the Raspberry Pi to transmit and receive data with a PC using GSM communication. The data could include information about the Bluetooth speaker's status, such as the current volume or track, which could be uploaded to a cloud storage service like Google Drive. The PC can then download this information to display it in a graphical user interface, providing a user-friendly way to see the Bluetooth speaker status.
     - Via GSM to upload request datas to Google Drive, download datas into PC to display the information of device.
-    
-    <aside>
-    📎 The objective of this stage is to enable the Raspberry Pi to transmit and receive data with a PC using GSM communication. The data could include information about the Bluetooth speaker's status, such as the current volume or track, which could be uploaded to a cloud storage service like Google Drive. The PC can then download this information to display it in a graphical user interface, providing a user-friendly way to see the Bluetooth speaker status.
-    
-    </aside>
-    
+
 
 # Equipments
 
@@ -65,18 +45,18 @@ Gesture recognition is a technology that recognizes a specific gesture or moveme
 
 # Flowcharts
 
-![flowchart.drawio.png](Control%20Bluetooth%20Speaker%20by%20Gesture%20Recognition%20(%20c5c388e5356f42868905579483054565/flowchart.drawio.png)
+![flowchart.drawio.png](https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition/blob/main/images/flowchart.drawio.png)
 
-![gesture_recognition_model.drawio.png](Control%20Bluetooth%20Speaker%20by%20Gesture%20Recognition%20(%20c5c388e5356f42868905579483054565/gesture_recognition_model.drawio.png)
+![gesture_recognition_model.drawio.png](https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition/blob/main/images/gesture_recognition_model.drawio.png)
 
 # Procedures of execution of the project
 
-1. **Implement Hand Detection**
+1. **Implement Hand Detection**    
 Mediapipe is a framework for building perception pipelines that process audio, video, and image data. We will use it to detect the 20 hand joints accurately, which will allow us to track the position and movement of each joint.
-2. **Implement Gesture Recognition**
+2. **Implement Gesture Recognition**   
 We will design our own defined gestures, mapping each gesture to a specific command. The index finger will be used to represent direction, with different movements representing different commands. For example, moving the index finger up could represent a "volume up" command, while moving the index finger to the left could represent a "previous song" command. 
     
-    ![combine_images (3).png](Control%20Bluetooth%20Speaker%20by%20Gesture%20Recognition%20(%20c5c388e5356f42868905579483054565/combine_images_(3).png)
+    ![combine_images (3).png](https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition/blob/main/images/combine_images.png)
     
     1. Up (Volumn Up)
     2. Down (Volumn Down)
@@ -84,31 +64,25 @@ We will design our own defined gestures, mapping each gesture to a specific comm
     4. Left (Previous Song)
     5. Hand Open (Play Music)
     6. Hand Close (Pause Music)
-3. **Develope code for Raspberry Pi to access Speaker state by bluetooth** 
+3. **Develope code for Raspberry Pi to access Speaker state by bluetooth**    
 We will use a Bluetooth communication device to connect the Raspberry Pi to the Bluetooth speaker. This will allow us to retrieve information about the state of the speaker, such as volume level and current track name.
-4. **Develope Music Control Functions**
+4. **Develope Music Control Functions**   
 We will use the gesture information to control the speaker functions, such as play, pause, skip, and volume control. These functions will be mapped to specific gestures, making it easy for the user to control the music playback without having to touch any buttons.
-5. **Develope code for PC & Raspberry Pi communicate with GSM**
+5. **Develope code for PC & Raspberry Pi communicate with GSM**   
 We will use a GSM communication device, such as the "HUAWEI E182E," to transmit data between the Raspberry Pi and a Google Drive account. This will allow us to upload request data to Google Drive, download data into a PC, and display the information of the device.
-6. **Integrate all functions**
+6. **Integrate all functions**   
 We will integrate all the functions developed in the previous steps into a single system. This will involve connecting the camera, Bluetooth speaker, and GSM communication device to the Raspberry Pi and developing the necessary software to enable the system to recognize gestures and control the speaker.
-7. **Prototype Testing**
-We will test the system thoroughly to ensure that it works as intended. This will involve testing the hand detection, gesture recognition, Bluetooth communication, and GSM communication functions, as well as the integration of all the functions.
-8. **Presentation and Final Report**
-Finally, we will present the project and submit a final report detailing the design, development, and testing of the system. We will also discuss any challenges encountered during the project and potential future directions for the technology.
 
-# Project Timeline
 
-![gantt.png](Control%20Bluetooth%20Speaker%20by%20Gesture%20Recognition%20(%20c5c388e5356f42868905579483054565/gantt.png)
+# Tasks
+ - [ ] Implement Hand Detection
+ - [ ] Implement Gesture Recognition
+ - [ ] Develope code for Raspberry Pi to access Speaker state by bluetooth
+ - [ ] Develope Music Control Functions
+ - [ ] Develope code for PC & Raspberry Pi communicate with GSM
+ - [ ] Integrate all functions
+ 
 
-1. Implement Hand Detection
-2. Implement Gesture Recognition
-3. Develope code for Raspberry Pi to control Speaker with bluetooth connection
-4. Develope Music Control Functions
-5. Develope code for PC & Raspberry Pi communicate with GSM
-6. Integrate all functions
-7. Prototype Testing
-8. Presentation and Final Report
 
 # Conclusion
 
