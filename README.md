@@ -73,9 +73,12 @@ We will use a GSM communication device, such as the "HUAWEI E182E," to transmit 
 6. **Integrate all functions**   
 We will integrate all the functions developed in the previous steps into a single system. This will involve connecting the camera, Bluetooth speaker, and GSM communication device to the Raspberry Pi and developing the necessary software to enable the system to recognize gestures and control the speaker.
 
+# Usage
+## Implement Hand Detection
+
 
 # Tasks
- - [ ] Implement Hand Detection
+ - [x] Implement Hand Detection
  - [ ] Implement Gesture Recognition
  - [ ] Develope code for Raspberry Pi to access Speaker state by bluetooth
  - [ ] Develope Music Control Functions
