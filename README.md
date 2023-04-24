@@ -74,7 +74,7 @@ We will use a GSM communication device, such as the "HUAWEI E182E," to transmit 
 We will integrate all the functions developed in the previous steps into a single system. This will involve connecting the camera, Bluetooth speaker, and GSM communication device to the Raspberry Pi and developing the necessary software to enable the system to recognize gestures and control the speaker.
 
 # Usage
-### Implement Hand Detection
+### 1. Implement Hand Detection
 Install required packages
 ```
 pip install opecv-python
