@@ -91,7 +91,7 @@ git clone https://github.com/nick8592/Hand-Detection-masOS.git
  - [x] Implement Hand Detection
  - [x] Implement Gesture Recognition
  - [ ] ~~Develop code for Raspberry Pi to access Speaker state by bluetooth~~
- - [ ] Develop Music Control Functions
+ - [x] Develop Music Control Functions
  - [ ] Develop code for PC & Raspberry Pi communicate with GSM
  - [ ] Integrate all functions
  
