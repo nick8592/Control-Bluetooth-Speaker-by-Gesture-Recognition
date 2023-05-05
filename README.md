@@ -77,8 +77,7 @@ We will integrate all the functions developed in the previous steps into a singl
 ### 1. Implement Hand Detection
 Install required packages
 ```
-pip install opecv-python
-pip install mediapipe
+pip install -r requirements.txt
 ```
 Git Clone [Hand Detection](https://github.com/nick8592/Hand-Detection-masOS.git) Repository
 ```
@@ -92,7 +91,7 @@ git clone https://github.com/nick8592/Hand-Detection-masOS.git
  - [x] Implement Gesture Recognition
  - [ ] ~~Develop code for Raspberry Pi to access Speaker state by bluetooth~~
  - [x] Develop Music Control Functions
- - [ ] Integrate Gesture Recognition & Music Control Functions
+ - [x] Integrate Gesture Recognition & Music Control Functions
  - [ ] Develop code for PC & Raspberry Pi communicate with GSM
  - [ ] Integrate all functions
  
