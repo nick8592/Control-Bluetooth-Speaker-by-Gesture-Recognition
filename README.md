@@ -46,9 +46,9 @@ Gesture recognition is a technology that recognizes a specific gesture or moveme
 
 # Flowcharts
 
-![flowchart.drawio.png](https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition/blob/main/images/flowchart.drawio.png)
+![flowchart.drawio.png](images/flowchart.drawio.png)
 
-![gesture_recognition_model.drawio.png](https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition/blob/main/images/gesture_recognition_model.drawio.png)
+![gesture_recognition_model.drawio.png](images/gesture_recognition_model.drawio.png)
 
 # Procedures of execution of the project
 
@@ -57,7 +57,7 @@ Mediapipe is a framework for building perception pipelines that process audio, v
 2. **Implement Gesture Recognition**   
 We will design our own defined gestures, mapping each gesture to a specific command. The index finger will be used to represent direction, with different movements representing different commands. 
     
-    ![combine_images (3).png](https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition/blob/main/images/combine_images.png)
+    ![combine_image](images/combine_image.jpg)
     
     1. Volumn Up: Number1 (only index finger)
     2. Volumn Down: Number2 (index & middle finger)
