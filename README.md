@@ -42,6 +42,7 @@ Gesture recognition is a technology that recognizes a specific gesture or moveme
 - **Software**
     - [OpenCV](https://opencv.org/)
     - [Mediapipe](https://pypi.org/project/mediapipe/)
+    - [VLC](https://pypi.org/project/python-vlc/)
 
 # Flowcharts
 
