@@ -84,9 +84,9 @@ Git Clone [Control Bluetooth Speaker by Gesture Recognition](https://github.com/
 cd <workspace_folder>
 git clone https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition.git
 ```
-Create new folder called `music`, and place in `workspace_folder/Control-Bluetooth-Speaker-by-Gesture-Recognition`
+Create new folder called `music`, and place in `workspace_folder/Control-Bluetooth-Speaker-by-Gesture-Recognition-main`
 ```
-cd <workspace_folder>/Control-Bluetooth-Speaker-by-Gesture-Recognition
+cd <workspace_folder>/Control-Bluetooth-Speaker-by-Gesture-Recognition-main
 mkdir music
 ```
 Place you own `xxx.mp3` files in `music` folder.  
