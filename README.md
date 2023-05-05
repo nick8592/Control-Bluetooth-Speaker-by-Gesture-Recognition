@@ -65,6 +65,8 @@ We will design our own defined gestures, mapping each gesture to a specific comm
     4. Previous Song: Pointing Left (thumb & index finger)
     5. Play Music: Hand Open
     6. Pause Music: Hand Close
+	> For **Next Song**, **Previous Song**, **Pause Song**, you need to matain your position for **2 seconds** to trigger the actions.
+
 3. **Develope code for Raspberry Pi to access Speaker state by bluetooth**    
 We will use a Bluetooth communication device to connect the Raspberry Pi to the Bluetooth speaker. This will allow us to retrieve information about the state of the speaker, such as volume level and current track name.
 4. **Develope Music Control Functions**   
