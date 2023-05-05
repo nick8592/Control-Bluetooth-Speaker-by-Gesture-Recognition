@@ -55,16 +55,16 @@ Gesture recognition is a technology that recognizes a specific gesture or moveme
 1. **Implement Hand Detection**    
 Mediapipe is a framework for building perception pipelines that process audio, video, and image data. We will use it to detect the 20 hand joints accurately, which will allow us to track the position and movement of each joint.
 2. **Implement Gesture Recognition**   
-We will design our own defined gestures, mapping each gesture to a specific command. The index finger will be used to represent direction, with different movements representing different commands. For example, moving the index finger up could represent a "volume up" command, while moving the index finger to the left could represent a "previous song" command. 
+We will design our own defined gestures, mapping each gesture to a specific command. The index finger will be used to represent direction, with different movements representing different commands. 
     
     ![combine_images (3).png](https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition/blob/main/images/combine_images.png)
     
-    1. Up (Volumn Up)
-    2. Down (Volumn Down)
-    3. Right (Next Song)
-    4. Left (Previous Song)
-    5. Hand Open (Play Music)
-    6. Hand Close (Pause Music)
+    1. Volumn Up: Number1 (only index finger)
+    2. Volumn Down: Number2 (index & middle finger)
+    3. Next Song: Pointing Right (thumb & index finger)
+    4. Previous Song: Pointing Left (thumb & index finger)
+    5. Play Music: Hand Open
+    6. Pause Music: Hand Close
 3. **Develope code for Raspberry Pi to access Speaker state by bluetooth**    
 We will use a Bluetooth communication device to connect the Raspberry Pi to the Bluetooth speaker. This will allow us to retrieve information about the state of the speaker, such as volume level and current track name.
 4. **Develope Music Control Functions**   
