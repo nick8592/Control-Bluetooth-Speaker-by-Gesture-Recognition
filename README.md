@@ -35,9 +35,9 @@ Gesture recognition is a technology that recognizes a specific gesture or moveme
 
 - **Hardware**
     - [Raspberry Pi 4 Computer Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
-    - [Raspberry Pi Camera V2](https://www.raspberrypi.com/products/camera-module-v2/)
     - [HUAWEI E182E](https://www.4gltemall.com/huawei-e182e-3g-hspa-21mbps-wireless-usb-modem.html) (Modem Mobile Broadband Stick)
     - Bluetooth Speaker
+    - Webcam
     - PC
 - **Software**
     - [OpenCV](https://opencv.org/)
