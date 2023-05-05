@@ -74,15 +74,19 @@ We will use a GSM communication device, such as the "HUAWEI E182E," to transmit 
 We will integrate all the functions developed in the previous steps into a single system. This will involve connecting the camera, Bluetooth speaker, and GSM communication device to the Raspberry Pi and developing the necessary software to enable the system to recognize gestures and control the speaker.
 
 # Usage
-### 1. Implement Hand Detection
 Install required packages
 ```
 pip install -r requirements.txt
 ```
-Git Clone [Hand Detection](https://github.com/nick8592/Hand-Detection-masOS.git) Repository
+Git Clone [Control Bluetooth Speaker by Gesture Recognition](https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition.git) Repository
 ```
 cd <workspace_folder>
-git clone https://github.com/nick8592/Hand-Detection-masOS.git
+git clone https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition.git
+```
+Create new folder called `music`, and place in `workspace_folder/Control-Bluetooth-Speaker-by-Gesture-Recognition`
+```
+cd <workspace_folder>/Control-Bluetooth-Speaker-by-Gesture-Recognition
+mkdir music
 ```
 
 
