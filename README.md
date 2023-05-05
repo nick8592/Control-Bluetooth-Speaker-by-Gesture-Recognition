@@ -74,11 +74,11 @@ We will use a GSM communication device, such as the "HUAWEI E182E," to transmit 
 We will integrate all the functions developed in the previous steps into a single system. This will involve connecting the camera, Bluetooth speaker, and GSM communication device to the Raspberry Pi and developing the necessary software to enable the system to recognize gestures and control the speaker.
 
 # Usage
-Install required packages
+Install required packages.  
 ```
 pip install -r requirements.txt
 ```
-Git Clone [Control Bluetooth Speaker by Gesture Recognition](https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition.git) Repository
+Git Clone [Control Bluetooth Speaker by Gesture Recognition](https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition.git) Repository.  
 ```
 cd <workspace_folder>
 git clone https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition.git
@@ -87,6 +87,11 @@ Create new folder called `music`, and place in `workspace_folder/Control-Bluetoo
 ```
 cd <workspace_folder>/Control-Bluetooth-Speaker-by-Gesture-Recognition
 mkdir music
+```
+Place you own `xxx.mp3` files in `music` folder.  
+Run `main.py`, then you can control music by using gestures.  
+```
+python main.py
 ```
 
 
