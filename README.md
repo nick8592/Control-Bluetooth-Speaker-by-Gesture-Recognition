@@ -55,7 +55,7 @@ Gesture recognition is a technology that recognizes a specific gesture or moveme
 1. **Implement Hand Detection**    
 Mediapipe is a framework for building perception pipelines that process audio, video, and image data. We will use it to detect the 20 hand joints accurately, which will allow us to track the position and movement of each joint.
 2. **Implement Gesture Recognition**   
-We will design our own defined gestures, mapping each gesture to a specific command. The fingers will be used to represent different gesture, with different combinration representing different commands. 
+We will design our own defined gestures, mapping each gesture to a specific command. The fingers will be used to represent different gesture, with different combination representing different commands. 
     
     ![combine_image](images/combine_image.jpg)
     
