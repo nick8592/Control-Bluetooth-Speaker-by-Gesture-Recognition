@@ -112,6 +112,13 @@ sudo wvdial
 ```
 If you see the IP address, which means you've connected to the internet successfully.
 
+# Google Drive API
+https://www.youtube.com/watch?v=Tislsz4XVuY&t=1s   
+https://learndataanalysis.org/source-code-how-to-upload-and-replace-files-in-google-drive-with-python-and-drive-api/   
+https://learndataanalysis.org/google-py-file-source-code/   
+https://blog.gtwang.org/programming/automation-of-google-ocr-using-python-tutorial/   
+https://stackoverflow.com/questions/11894772/google-drive-mime-types-listing   
+
 # Usage
 Install required packages.  
 ```
