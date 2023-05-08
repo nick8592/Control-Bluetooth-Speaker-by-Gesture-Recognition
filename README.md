@@ -141,7 +141,7 @@ python main.py
  - [ ] ~~Develop code for Raspberry Pi to access Speaker state by bluetooth~~
  - [x] Develop Music Control Functions
  - [x] Integrate Gesture Recognition & Music Control Functions
- - [x] Develop code for PC & Raspberry Pi communicate with GSM
+ - [x] Settings for PC & Raspberry Pi communicate with GSM
  - [ ] Upload log file to Google Drive
  - [ ] Integrate all functions
  
