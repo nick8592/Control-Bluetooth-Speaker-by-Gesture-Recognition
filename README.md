@@ -75,6 +75,43 @@ We will use a GSM communication device, such as the "HUAWEI E182E," to transmit 
 6. **Integrate all functions**   
 We will integrate all the functions developed in the previous steps into a single system. This will involve connecting the camera, Bluetooth speaker, and GSM communication device to the Raspberry Pi and developing the necessary software to enable the system to recognize gestures and control the speaker.
 
+# GSM
+https://bodi543.blogspot.com/2018/06/4gwvdial.html   
+Install required packages.
+```
+sudo apt-get update
+sudo apt-get install usb-modeswitch wvdial
+```
+Defined `wvdial` settings.
+```
+sudo pico wvdial.conf
+```
+Configure settings. (We using Chunghwa Telecom 中華電信)
+```
+[Dialer Defaults]
+Init1 = ATZ
+; Init2 = AT+CPIN?
+; Init3 = AT+CPIN=0000
+Init4 = ATQ0 V1 E1 +FCLASS=0
+Init5 = AT+CGDCONT=1, "IP", "Internet"
+Modem Type = Analog Modem
+Baud = 9600
+; New PPPD = yes
+Modem = /dev/ttyUSB0
+ISDN = 0
+Phone = *99#
+APN = internet
+Password = 9180******
+Username = 9180******
+Stupid Mode = 1
+```
+Enable `wvdial`.   
+Then we can connect to internet via SIM card.
+```
+sudo wvdial
+```
+If you see the IP address, which means you've connected to the internet successfully.
+
 # Usage
 Install required packages.  
 ```
@@ -105,6 +142,7 @@ python main.py
  - [x] Develop Music Control Functions
  - [x] Integrate Gesture Recognition & Music Control Functions
  - [x] Develop code for PC & Raspberry Pi communicate with GSM
+ - [ ] Upload log file to Google Drive
  - [ ] Integrate all functions
  
 
