@@ -7,7 +7,10 @@ import time
 import math
 import vlc
 import glob
-import os 
+import os
+import sys
+from datetime import datetime
+from api import api_upload
 
 def set_uri(uri):
     media_player.set_mrl(uri)
@@ -47,8 +50,8 @@ def previous_song(index):
     return index
 
 # Get the current state: Playing, Paused, or Other
-def get_state(self):
-    state = self.media.get_state()
+def get_state():
+    state = media.get_state()
     if state == vlc.State.Playing:
         return 1
     elif state == vlc.State.Paused:
@@ -135,6 +138,38 @@ def get_gesture(angle, state):
         gesture = 'unknown'
     return gesture
 
+def update_text_log(text_path, player_state, volume, song_name):
+    '''
+    player_state
+    0 - pause
+    1 - playing
+    2 - volume up
+    3 - volume down
+    4 - next song
+    5 - previous song
+    '''
+    if player_state == 0:
+        current_state = 'pause'
+    elif player_state == 1:
+        current_state = 'playing'
+    elif player_state == 2:
+        current_state = 'volume up'
+    elif player_state == 3:
+        current_state = 'volume down'
+    elif player_state == 4:
+        current_state = 'next song'
+    elif player_state == 5:
+        current_state = 'previous song'
+    elif player_state == 6:
+        current_state = 'start'
+
+    now = datetime.now()
+    formatted_date = now.strftime(f"%Y-%m-%d %H:%M:%S")
+    with open(text_path, 'w') as f:
+        f.write(''.join([formatted_date, ' ', current_state, ' ', str(volume), ' ', song_name, '\n']))
+
+# -------------------------------------------------------------------------
+
 # Load music files
 base_folder = './music'
 song_name = os.listdir(base_folder)
@@ -152,6 +187,13 @@ media_player.set_media(vlc.Media(playlist[idx]))
 media_player.play()
 volume = 30
 media_player.audio_set_volume(volume)
+
+# Create .txt log file
+now = datetime.now()
+formatted_date = now.strftime(f"%Y-%m-%d %H:%M:%S")
+text_path = 'music_log.txt'
+with open(text_path, 'w') as f:
+    f.write(''.join([formatted_date, '\n']))
 
 # Set up hand tracking
 STATIC_IMAGE_MODE = False
@@ -183,16 +225,30 @@ startTime = 0
 endTime = 0
 maintainTime = 0
 maintainThreshold = 2
+previous_gesture = ''
 
+player_state = 6
+update_text_log(text_path, player_state, volume, song_name[idx])
+count = 0
 # main loop
 while True:
     
+    count += 1
+    if count == 20:
+         api_upload()
+         count = 0
     # pause music if hand is closed
     if music_state_change == True and current_gesture_state == 0:
         pause()
+        player_state = 0
+        update_text_log(text_path, player_state, volume, song_name[idx])
+#         api_upload()
     # resume music if hand is open
-    elif current_gesture_state == 1:
+    elif music_state_change == True and current_gesture_state == 1:
         resume()
+        player_state = 1
+        update_text_log(text_path, player_state, volume, song_name[idx])
+#         api_upload()
         
     # read from camera
     ret, image = cap.read()
@@ -267,7 +323,7 @@ while True:
                 # Start timer
                 startTime = time.time()
                 # Check if the timer has exceeded the maintain threshold time
-                if (startTime - endTime) > maintainThreshold+1:
+                if (startTime - endTime) > maintainThreshold+1 or previous_gesture != gesture:
                     endTime = time.time()
                     maintainTime = 0  
                 maintainTime += (startTime - endTime)
@@ -284,6 +340,9 @@ while True:
                     set_volume(volume)
                 else:
                     set_volume(volume)
+                    player_state = 2
+                    update_text_log(text_path, player_state, volume, song_name[idx])
+#                     api_upload()
             elif gesture == 'down':
                 # Decrease volume by 2
                 volume -= 2
@@ -293,6 +352,9 @@ while True:
                     set_volume(volume)
                 else:
                     set_volume(volume)
+                    player_state = 3
+                    update_text_log(text_path, player_state, volume, song_name[idx])
+#                     api_upload()
             elif gesture == 'right':
                 # Start timer
                 startTime = time.time()
@@ -309,6 +371,9 @@ while True:
                     idx = idx % playlist_len
                     set_uri(playlist[idx])
                     media_player.play()
+                    player_state = 4
+                    update_text_log(text_path, player_state, volume, song_name[idx])
+#                     api_upload()
                 continue
             elif gesture == 'left':
                 # Start timer
@@ -326,6 +391,9 @@ while True:
                     idx = idx % playlist_len
                     set_uri(playlist[idx])
                     media_player.play()
+                    player_state = 5
+                    update_text_log(text_path, player_state, volume, song_name[idx])
+#                     api_upload()
                 continue
             
             # Check if previous and current gesture states are equal
@@ -337,6 +405,8 @@ while True:
 
             # Set the previous gesture state to the current gesture state
             previous_gesture_state = current_gesture_state
+            
+            previous_gesture = gesture
 
                     
 
