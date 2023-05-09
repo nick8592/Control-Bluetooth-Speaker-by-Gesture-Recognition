@@ -77,14 +77,26 @@ We will integrate all the functions developed in the previous steps into a singl
 
 # GSM
 https://bodi543.blogspot.com/2018/06/4gwvdial.html   
+https://createlabz.store/blogs/createlabz-tutorials/huawei-e173-3g-1-2-huawei-e173-setup-send-and-receive-sms-with-raspberry-pi    
 Install required packages.
 ```
 sudo apt-get update
-sudo apt-get install usb-modeswitch wvdial
+sudo apt-get install ppp usb-modeswitch usb-modeswitch-data wvdial
+```
+Reboot
+```
+sudo reboot
+```
+Check USB state
+```
+dmesg | grep ttyUSB
+lsusb | grep Huawei
 ```
 Defined `wvdial` settings.
+https://bellergy.com/3-installing-4g-usb-modem-to-raspberry-pi/   
+https://linux.die.net/man/5/wvdial.conf 
 ```
-sudo pico wvdial.conf
+sudo pico /etc/wvdial.conf
 ```
 Configure settings. (We using Chunghwa Telecom 中華電信)
 ```
