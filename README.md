@@ -161,7 +161,7 @@ python main.py
  - [x] Develop Music Control Functions
  - [x] Integrate Gesture Recognition & Music Control Functions
  - [x] Settings for PC & Raspberry Pi communicate with GSM
- - [ ] Upload log file to Google Drive
+ - [x] Upload log file to Google Drive
  - [ ] Integrate all functions
  
 
