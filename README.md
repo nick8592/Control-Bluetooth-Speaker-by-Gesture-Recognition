@@ -66,13 +66,11 @@ We will design our own defined gestures, mapping each gesture to a specific comm
     5. Play Music: Hand Open
     6. Pause Music: Hand Close
 
-3. **Develope code for Raspberry Pi to access Speaker state by bluetooth**    
-We will use a Bluetooth communication device to connect the Raspberry Pi to the Bluetooth speaker. This will allow us to retrieve information about the state of the speaker, such as volume level and current track name.
-4. **Develope Music Control Functions**   
+3. **Develope Music Control Functions**   
 We will use the gesture information to control the speaker functions, such as play, pause, skip, and volume control. These functions will be mapped to specific gestures, making it easy for the user to control the music playback without having to touch any buttons.
-5. **Develope code for PC & Raspberry Pi communicate with GSM**   
+4. **Develope code for PC & Raspberry Pi communicate with GSM**   
 We will use a GSM communication device, such as the "HUAWEI E182E," to transmit data between the Raspberry Pi and a Google Drive account. This will allow us to upload request data to Google Drive, download data into a PC, and display the information of the device.
-6. **Integrate all functions**   
+5. **Integrate all functions**   
 We will integrate all the functions developed in the previous steps into a single system. This will involve connecting the camera, Bluetooth speaker, and GSM communication device to the Raspberry Pi and developing the necessary software to enable the system to recognize gestures and control the speaker.
 
 # GSM
@@ -162,7 +160,7 @@ python main.py
  - [x] Integrate Gesture Recognition & Music Control Functions
  - [x] Settings for PC & Raspberry Pi communicate with GSM
  - [x] Upload log file to Google Drive
- - [ ] Integrate all functions
+ - [x] Integrate all functions
  
 
 
