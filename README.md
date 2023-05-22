@@ -95,7 +95,6 @@ lsusb | grep Huawei
 Defined `wvdial` settings.   
 https://bellergy.com/3-installing-4g-usb-modem-to-raspberry-pi/   
 https://linux.die.net/man/5/wvdial.conf 
-```
 
 # Usage
 Install required packages.  
