@@ -75,6 +75,28 @@ We will use a GSM communication device, such as the "HUAWEI E182E," to transmit 
 6. **Integrate all functions**   
 We will integrate all the functions developed in the previous steps into a single system. This will involve connecting the camera, Bluetooth speaker, and GSM communication device to the Raspberry Pi and developing the necessary software to enable the system to recognize gestures and control the speaker.
 
+# GSM
+https://bodi543.blogspot.com/2018/06/4gwvdial.html   
+https://createlabz.store/blogs/createlabz-tutorials/huawei-e173-3g-1-2-huawei-e173-setup-send-and-receive-sms-with-raspberry-pi    
+Install required packages.
+```
+sudo apt-get update
+sudo apt-get install ppp usb-modeswitch usb-modeswitch-data wvdial
+```
+Reboot
+```
+sudo reboot
+```
+Check USB state
+```
+dmesg | grep ttyUSB
+lsusb | grep Huawei
+```
+Defined `wvdial` settings.   
+https://bellergy.com/3-installing-4g-usb-modem-to-raspberry-pi/   
+https://linux.die.net/man/5/wvdial.conf 
+```
+
 # Usage
 Install required packages.  
 ```
