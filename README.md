@@ -95,6 +95,40 @@ lsusb | grep Huawei
 Defined `wvdial` settings.   
 https://bellergy.com/3-installing-4g-usb-modem-to-raspberry-pi/   
 https://linux.die.net/man/5/wvdial.conf 
+```
+sudo pico /etc/wvdial.conf
+```
+Configure settings. (We using Chunghwa Telecom 中華電信)
+```
+[Dialer Defaults]
+Init1 = ATZ
+; Init2 = AT+CPIN?
+; Init3 = AT+CPIN=0000
+Init4 = ATQ0 V1 E1 +FCLASS=0
+Init5 = AT+CGDCONT=1, "IP", "Internet"
+Modem Type = Analog Modem
+Baud = 9600
+; New PPPD = yes
+Modem = /dev/ttyUSB0
+ISDN = 0
+Phone = *99#
+APN = internet
+Password = 9180******
+Username = 9180******
+Stupid Mode = 1
+```
+Enable `wvdial`.   
+Then we can connect to internet via SIM card.
+```
+sudo wvdial
+```
+If you see the IP address, which means you've connected to the internet successfully.
+# Google Drive API
+https://www.youtube.com/watch?v=Tislsz4XVuY&t=1s   
+https://learndataanalysis.org/source-code-how-to-upload-and-replace-files-in-google-drive-with-python-and-drive-api/   
+https://learndataanalysis.org/google-py-file-source-code/   
+https://blog.gtwang.org/programming/automation-of-google-ocr-using-python-tutorial/   
+https://stackoverflow.com/questions/11894772/google-drive-mime-types-listing 
 
 # Usage
 Install required packages.  
