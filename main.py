@@ -10,7 +10,7 @@ import glob
 import os
 import sys
 from datetime import datetime
-from api import api_upload
+# from api import api_upload
 
 def set_uri(uri):
     media_player.set_mrl(uri)
@@ -228,26 +228,26 @@ maintainThreshold = 2
 previous_gesture = ''
 
 player_state = 6
-update_text_log(text_path, player_state, volume, song_name[idx])
+# update_text_log(text_path, player_state, volume, song_name[idx])
 count = 0
 # main loop
 while True:
     
     count += 1
     if count == 20:
-         api_upload()
+#          api_upload()
          count = 0
     # pause music if hand is closed
     if music_state_change == True and current_gesture_state == 0:
         pause()
         player_state = 0
-        update_text_log(text_path, player_state, volume, song_name[idx])
+#         update_text_log(text_path, player_state, volume, song_name[idx])
 #         api_upload()
     # resume music if hand is open
     elif music_state_change == True and current_gesture_state == 1:
         resume()
         player_state = 1
-        update_text_log(text_path, player_state, volume, song_name[idx])
+#         update_text_log(text_path, player_state, volume, song_name[idx])
 #         api_upload()
         
     # read from camera
@@ -341,7 +341,7 @@ while True:
                 else:
                     set_volume(volume)
                     player_state = 2
-                    update_text_log(text_path, player_state, volume, song_name[idx])
+#                     update_text_log(text_path, player_state, volume, song_name[idx])
 #                     api_upload()
             elif gesture == 'down':
                 # Decrease volume by 2
@@ -353,7 +353,7 @@ while True:
                 else:
                     set_volume(volume)
                     player_state = 3
-                    update_text_log(text_path, player_state, volume, song_name[idx])
+#                     update_text_log(text_path, player_state, volume, song_name[idx])
 #                     api_upload()
             elif gesture == 'right':
                 # Start timer
@@ -372,7 +372,7 @@ while True:
                     set_uri(playlist[idx])
                     media_player.play()
                     player_state = 4
-                    update_text_log(text_path, player_state, volume, song_name[idx])
+#                     update_text_log(text_path, player_state, volume, song_name[idx])
 #                     api_upload()
                 continue
             elif gesture == 'left':
@@ -392,7 +392,7 @@ while True:
                     set_uri(playlist[idx])
                     media_player.play()
                     player_state = 5
-                    update_text_log(text_path, player_state, volume, song_name[idx])
+#                     update_text_log(text_path, player_state, volume, song_name[idx])
 #                     api_upload()
                 continue
             
