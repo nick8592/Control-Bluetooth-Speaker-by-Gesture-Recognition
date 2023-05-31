@@ -26,16 +26,16 @@ Gesture recognition is a technology that recognizes a specific gesture or moveme
     - Stable Bluetooth communication with device.
     - Connect the Bluetooth speaker with the Bluetooth communication device on the Raspberry Pi and use the gesture information to control the Bluetooth speaker.
     
-- **Stage 4 : Transmit/Receive Datas Between Raspberry Pi & PC**
+- **Stage 4 : Transmit/Receive Datas Between Raspberry Pi & PC (option)**
     > The objective of this stage is to enable the Raspberry Pi to transmit and receive data with a PC using GSM communication. The data could include information about the Bluetooth speaker's status, such as the current volume or track, which could be uploaded to a cloud storage service like Google Drive. The PC can then download this information to display it in a graphical user interface, providing a user-friendly way to see the Bluetooth speaker status.
-    - Via GSM to upload request datas to Google Drive, download datas into PC to display the information of device.
-
+    - Via GSM to upload request datas to Google Drive, download datas into PC to display the information of device.   
+`If you want to connect via GSM, make sure you download the repo with "gsm" branch`
 
 # Equipments
 
 - **Hardware**
     - [Raspberry Pi 4 Computer Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
-    - [HUAWEI E182E](https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition/blob/c2b96e2fee3fa7ffeda68d8a94a04aa81cc8b26a/HUAWEI%20E182E%20HSPA%2B%20USB%20Slider%20Quick%20Start.pdf)
+    - [HUAWEI E182E](https://github.com/nick8592/Control-Bluetooth-Speaker-by-Gesture-Recognition/blob/c2b96e2fee3fa7ffeda68d8a94a04aa81cc8b26a/HUAWEI%20E182E%20HSPA%2B%20USB%20Slider%20Quick%20Start.pdf)(option)
     - Bluetooth Speaker
     - Webcam
     - PC
@@ -70,12 +70,12 @@ We will design our own defined gestures, mapping each gesture to a specific comm
 We will use a Bluetooth communication device to connect the Raspberry Pi to the Bluetooth speaker. This will allow us to retrieve information about the state of the speaker, such as volume level and current track name.
 4. **Develope Music Control Functions**   
 We will use the gesture information to control the speaker functions, such as play, pause, skip, and volume control. These functions will be mapped to specific gestures, making it easy for the user to control the music playback without having to touch any buttons.
-5. **Develope code for PC & Raspberry Pi communicate with GSM**   
+5. **Develope code for PC & Raspberry Pi communicate with GSM (option)**   
 We will use a GSM communication device, such as the "HUAWEI E182E," to transmit data between the Raspberry Pi and a Google Drive account. This will allow us to upload request data to Google Drive, download data into a PC, and display the information of the device.
 6. **Integrate all functions**   
 We will integrate all the functions developed in the previous steps into a single system. This will involve connecting the camera, Bluetooth speaker, and GSM communication device to the Raspberry Pi and developing the necessary software to enable the system to recognize gestures and control the speaker.
 
-# GSM
+# GSM (option)
 https://bodi543.blogspot.com/2018/06/4gwvdial.html   
 https://createlabz.store/blogs/createlabz-tutorials/huawei-e173-3g-1-2-huawei-e173-setup-send-and-receive-sms-with-raspberry-pi    
 Install required packages.
@@ -123,7 +123,8 @@ Then we can connect to internet via SIM card.
 sudo wvdial
 ```
 If you see the IP address, which means you've connected to the internet successfully.
-# Google Drive API
+
+# Google Drive API (option)
 https://www.youtube.com/watch?v=Tislsz4XVuY&t=1s   
 https://learndataanalysis.org/source-code-how-to-upload-and-replace-files-in-google-drive-with-python-and-drive-api/   
 https://learndataanalysis.org/google-py-file-source-code/   
