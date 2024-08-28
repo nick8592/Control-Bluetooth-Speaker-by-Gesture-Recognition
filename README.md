@@ -153,6 +153,8 @@ python main.py
 ```
 > Note: For **Next**, **Previous**, **Pause**, you need to matain your position for **2 seconds** to trigger the actions.
 
+![Gesture control demo](images/gesture_demo.png)
+
 
 # Tasks
  - [x] Implement Hand Detection
